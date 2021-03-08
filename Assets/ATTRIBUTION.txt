@@ -2,3 +2,5 @@ Jellyfish: https://opengameart.org/content/primary-jellies
 Jellyfish Sounds: https://opengameart.org/content/primary-jellies
 Tileset: https://opengameart.org/content/alien-planet-platformer-tileset
 Background Elements: https://opengameart.org/content/underwater-fantasy
+Menu Background: https://opengameart.org/content/ocean-background
+Font: "Seaweed Script" from https://www.1001fonts.com/users/fontdiner/
