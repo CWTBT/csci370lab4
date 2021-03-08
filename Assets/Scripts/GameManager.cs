@@ -13,6 +13,15 @@ public class GameManager : MonoBehaviour
 
     public GameObject dialogBox;
     public GameObject dialogText;
+    public GameObject startButton;
+    public GameObject backgroundImage;
+
+    public GameObject canvas;
+    public GameObject events;
+
+    private int currentLevel = 0;
+
+    public TextMeshProUGUI menuText;
 
  
     private Coroutine dialogCo;
@@ -35,6 +44,8 @@ public class GameManager : MonoBehaviour
 		{
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(canvas);
+            DontDestroyOnLoad(events);
              
 		}
 		else
@@ -42,6 +53,22 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 		}
 	}
+
+    private void ChangeLevel()
+    {
+        if (currentLevel == 0)
+        {
+            startButton.SetActive(false);
+            menuText.text = "";
+            StartCoroutine(LoadYourAsyncScene(true, "SampleScene"));
+            currentLevel++;
+        }
+    }
+
+    public void StartButton()
+    {
+        ChangeLevel();
+    }
 
     public void StartDialog(string text)
 	{
@@ -67,7 +94,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
 		}
 	}
-    /*IEnumerator ColorLerp(Color endValue, float duration)
+    IEnumerator ColorLerp(Color endValue, float duration)
 	{
         float time = 0;
         Image sprite = backgroundImage.GetComponent<Image>();
@@ -89,7 +116,7 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
-        if (lerp) {StartCoroutine(ColorLerp(new Color(1, 1, 1, 0), 2));}
+        if (lerp) {StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), 2));}
 
-    }*/
+    }
 }
