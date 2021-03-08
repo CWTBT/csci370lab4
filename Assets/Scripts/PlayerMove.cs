@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     Rigidbody2D body;
+    Animator animator;
 
     float horizontal;
     float vertical;
+    float speed;
 
     public float moveSpeed = 5f;
     private float moveLimiter = 0.7f;
@@ -16,7 +18,8 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-
+        animator = GetComponent<Animator>();
+        speed = body.velocity.magnitude;
     }
 
     // Update is called once per frame
@@ -24,6 +27,11 @@ public class PlayerMove : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        speed = body.velocity.magnitude;
+
+        animator.SetFloat("horizontal", horizontal);
+        animator.SetFloat("vertical", vertical);
+        animator.SetFloat("speed", speed);
 
         if (horizontal < 0)
         {

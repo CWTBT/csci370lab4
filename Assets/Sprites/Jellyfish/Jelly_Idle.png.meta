@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 7e3d1cf9f5711e44290a6866a464f0b2
+guid: 21110ee2a2ab170498a159ba2215b71e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6902155495151549915
-    second: jellyfish-large-Sheet_0
+      213: 2106514987881263239
+    second: Jelly_Idle_2
   - first:
-      213: 5447968142556069420
-    second: jellyfish-large-Sheet_1
-  - first:
-      213: 2203221894927675941
-    second: jellyfish-large-Sheet_2
-  - first:
-      213: -7498460892201594745
-    second: jellyfish-large-Sheet_3
+      213: -5952881181761999636
+    second: Jelly_Idle_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,49 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jellyfish-large-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bddb4098ad169cf50800000000000000
-      internalID: 6902155495151549915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jellyfish-large-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2ef2bc39221b9b40800000000000000
-      internalID: 5447968142556069420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jellyfish-large-Sheet_2
+      name: Jelly_Idle_2
       rect:
         serializedVersion: 2
         x: 64
@@ -171,14 +123,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 522f688e3aa639e10800000000000000
-      internalID: 2203221894927675941
+      spriteID: 780f2be7838db3d10800000000000000
+      internalID: 2106514987881263239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jellyfish-large-Sheet_3
+      name: Jelly_Idle_3
       rect:
         serializedVersion: 2
         x: 96
@@ -192,8 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7805a2e0c8d10f790800000000000000
-      internalID: -7498460892201594745
+      spriteID: cece7fada1e136da0800000000000000
+      internalID: -5952881181761999636
       vertices: []
       indices: 
       edges: []
