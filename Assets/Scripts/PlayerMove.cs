@@ -50,7 +50,12 @@ public class PlayerMove : MonoBehaviour
             horizontal *= moveLimiter;
             vertical *= moveLimiter;
         }
-        body.AddForce(new Vector2(horizontal * moveSpeed, vertical * moveSpeed));
+
+        // old movement if we want to go back
+        //body.AddForce(new Vector2(horizontal * moveSpeed, vertical * moveSpeed));
+
+        body.AddForce(body.transform.up * vertical * moveSpeed);
+        body.AddTorque(-horizontal);
 
     }
 }
