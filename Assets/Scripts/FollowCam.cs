@@ -12,17 +12,16 @@ public class FollowCam : MonoBehaviour
 
     private float lBound;
     private float rBound;
-    //Commented out scrolling to make this a sidescroller. Can be changed in the future.
-    //private float uBound;
-    //private float dBound;
+    private float uBound;
+    private float dBound;
 
     // Start is called before the first frame update
     void Start()
     {
         lBound = boundaryPercent * Camera.main.pixelWidth;
         rBound = Camera.main.pixelWidth - lBound;
-        //dBound = boundaryPercent * Camera.main.pixelHeight;
-        //uBound = Camera.main.pixelHeight - dBound;
+        dBound = boundaryPercent * Camera.main.pixelHeight;
+        uBound = Camera.main.pixelHeight - dBound;
     }
 
     // Update is called once per frame
@@ -43,14 +42,14 @@ public class FollowCam : MonoBehaviour
                 pos.x += spriteLoc.x - rBound;
             }
 
-            /*if (spriteLoc.y < dBound)
+            if (spriteLoc.y < dBound)
             {
                 pos.y -= dBound - spriteLoc.y;
             }
             else if (spriteLoc.y > uBound)
             {
                 pos.y += spriteLoc.y - uBound;
-            }*/
+            }
 
             pos = Vector3.Lerp(transform.position, pos, easing);
 
