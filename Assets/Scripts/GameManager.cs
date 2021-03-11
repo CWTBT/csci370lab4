@@ -27,20 +27,28 @@ public class GameManager : MonoBehaviour
     private Coroutine dialogCo;
 
     private int fishCount;
-    private int roundCount;
+    private int roundCount = 1;
+    private int fishKillCount;
 
+    public GameObject jellyfish;
 
     // Start is called before the first frame update
     void Start()
     {
     }
 
+
     // Update is called once per frame
     void Update()
     {
-  
+
+
+        if (fishCount <= roundCount){
+            IncRound();
+        }
 
     }
+
 
     void Awake()
 	{
@@ -98,6 +106,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
 		}
 	}
+
     IEnumerator ColorLerp(Color endValue, float duration)
 	{
         float time = 0;
@@ -112,6 +121,7 @@ public class GameManager : MonoBehaviour
 		}
         sprite.color = endValue;
 	}
+
     IEnumerator LoadYourAsyncScene(bool lerp, string scene)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene);
@@ -125,19 +135,51 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void IncFishCount()
+    public void IncFishKillCount()
     {
-        fishCount++;
+        fishKillCount++;
     }
 
-    public void IncRoundCount()
+    public void IncRound()
     {
         roundCount++;
+        nextRound();
     }
 
     public int ReturnRound()
     {
         return roundCount;
+    }
+
+    public string ReturnFishKillCount()
+    {
+        return fishKillCount.ToString();
+    }
+
+
+    public void nextRound()
+    { 
+        fishCount = 3 * roundCount;
+        StartCoroutine(SpawnJelly(fishCount));
+    }
+
+
+    IEnumerator SpawnJelly(int fishCount)
+    {
+        for (int i = 0; i < fishCount; i++)
+        {
+            GameObject fish = Instantiate(jellyfish);
+            //https://answers.unity.com/questions/759542/get-coordinate-with-angle-and-distance.html
+            Vector2 pos = new Vector2();
+            float dist = 28f;
+            float a = UnityEngine.Random.Range(0, 2f) * Mathf.PI;
+            pos.x = Mathf.Sin(a) * dist;
+            pos.y = Mathf.Cos(a) * dist + 10;
+
+            fish.transform.position = pos;
+
+            yield return new WaitForSeconds(.1f);
+        }
     }
 
 

@@ -261,6 +261,7 @@ MonoBehaviour:
   canvas: {fileID: 495009906}
   events: {fileID: 1614533146}
   menuText: {fileID: 1987845663}
+  jellyfish: {fileID: 5660775033541659357, guid: ec5261bc9c20e43a4bde8253b7cdd9ae, type: 3}
 --- !u!4 &693253344
 Transform:
   m_ObjectHideFlags: 0
