@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject dialogBox;
     public GameObject dialogText;
     public GameObject startButton;
+    public GameObject creditsButton;
+    public GameObject backButton;
     public GameObject backgroundImage;
 
     public GameObject canvas;
@@ -22,7 +24,7 @@ public class GameManager : MonoBehaviour
     private int currentLevel = 0;
 
     public TextMeshProUGUI menuText;
-
+    public TextMeshProUGUI creditsText;
  
     private Coroutine dialogCo;
 
@@ -32,9 +34,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject jellyfish;
 
+    private string title;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        title = menuText.text;
     }
 
 
@@ -44,7 +50,7 @@ public class GameManager : MonoBehaviour
 
 
         if (fishCount <= roundCount){
-            IncRound();
+            //IncRound();
         }
 
     }
@@ -71,6 +77,7 @@ public class GameManager : MonoBehaviour
         if (currentLevel == 0)
         {
             startButton.SetActive(false);
+            creditsButton.SetActive(false);
             menuText.text = "";
             StartCoroutine(LoadYourAsyncScene(true, "SampleScene"));
             currentLevel++;
@@ -84,7 +91,20 @@ public class GameManager : MonoBehaviour
 
     public void CreditsButton()
     {
-        
+        menuText.text = "Credits";
+        startButton.SetActive(false);
+        creditsButton.SetActive(false);
+        creditsText.gameObject.SetActive(true);
+        backButton.SetActive(true);
+    }
+
+    public void BackButton()
+    {
+        menuText.text = title;
+        startButton.SetActive(true);
+        creditsButton.SetActive(true);
+        backButton.SetActive(false);
+        creditsText.gameObject.SetActive(false);
     }
 
     public void StartDialog(string text)
