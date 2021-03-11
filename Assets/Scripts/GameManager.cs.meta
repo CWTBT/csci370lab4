@@ -3,7 +3,18 @@ guid: 80ef22b0aebf4734f80c53a53d491caa
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dialogBox: {instanceID: 0}
+  - dialogText: {instanceID: 0}
+  - startButton: {instanceID: 0}
+  - creditsButton: {instanceID: 0}
+  - backButton: {instanceID: 0}
+  - backgroundImage: {instanceID: 0}
+  - canvas: {instanceID: 0}
+  - events: {instanceID: 0}
+  - menuText: {instanceID: 0}
+  - creditsText: {instanceID: 0}
+  - jellyfish: {fileID: 5660775033541659357, guid: ec5261bc9c20e43a4bde8253b7cdd9ae, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

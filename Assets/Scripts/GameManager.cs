@@ -29,10 +29,12 @@ public class GameManager : MonoBehaviour
     private Coroutine dialogCo;
 
     private int fishCount;
-    private int roundCount = 1;
+    private int roundCount = 0;
     private int fishKillCount;
+    private bool roundStart = false;
 
     public GameObject jellyfish;
+    public float distance;
 
     private string title;
 
@@ -49,8 +51,10 @@ public class GameManager : MonoBehaviour
     {
 
 
-        if (fishCount <= roundCount){
-            //IncRound();
+        if ((fishCount <= roundCount) && roundStart){
+            roundStart = false;
+            NextRound();
+            Debug.Log(roundStart);
         }
 
     }
@@ -81,6 +85,7 @@ public class GameManager : MonoBehaviour
             menuText.text = "";
             StartCoroutine(LoadYourAsyncScene(true, "SampleScene"));
             currentLevel++;
+            roundStart = true;
         }
     }
 
@@ -174,11 +179,6 @@ public class GameManager : MonoBehaviour
     {
         roundCount++;
     }
-    public void IncRound()
-    {
-        roundCount++;
-        nextRound();
-    }
 
     public int ReturnRound()
     {
@@ -191,8 +191,10 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void nextRound()
-    { 
+    public void NextRound()
+    {
+        roundCount++;
+        Debug.Log("Round: " + roundCount);
         fishCount = 3 * roundCount;
         StartCoroutine(SpawnJelly(fishCount));
     }
@@ -202,18 +204,21 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < fishCount; i++)
         {
+            Debug.Log("spawning jelly");
+
             GameObject fish = Instantiate(jellyfish);
             //https://answers.unity.com/questions/759542/get-coordinate-with-angle-and-distance.html
             Vector2 pos = new Vector2();
-            float dist = 28f;
             float a = UnityEngine.Random.Range(0, 2f) * Mathf.PI;
-            pos.x = Mathf.Sin(a) * dist;
-            pos.y = Mathf.Cos(a) * dist + 10;
+            pos.x = Mathf.Sin(a) * distance;
+            pos.y = Mathf.Cos(a) * distance + 10;
 
             fish.transform.position = pos;
 
             yield return new WaitForSeconds(.1f);
         }
+        roundStart = true;
+        Debug.Log("Number of Jellies: " + fishCount);
     }
 
 
