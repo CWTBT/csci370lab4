@@ -51,11 +51,11 @@ public class GameManager : MonoBehaviour
     {
 
 
-        if ((fishCount <= roundCount) && roundStart){
+        /*[if ((fishCount <= roundCount) && roundStart){
             roundStart = false;
             NextRound();
             Debug.Log(roundStart);
-        }
+        }*/
 
     }
 
@@ -73,6 +73,8 @@ public class GameManager : MonoBehaviour
 		else
 		{
             Destroy(gameObject);
+            Destroy(canvas);
+            Destroy(events);
 		}
 	}
 
@@ -87,6 +89,15 @@ public class GameManager : MonoBehaviour
             currentLevel++;
             roundStart = true;
         }
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("Game over!");
+        StartCoroutine(LoadYourAsyncScene(false, "MainMenu"));
+        menuText.text = title;
+        startButton.SetActive(true);
+        creditsButton.SetActive(true);
     }
 
     public void StartButton()
@@ -161,7 +172,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         if (lerp) {StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), 2));}
-
+        else StartCoroutine(ColorLerp(new Color(1, 1, 1, 1), 2)); // reverse
     }
 
 

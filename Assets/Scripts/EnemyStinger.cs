@@ -25,6 +25,7 @@ public class EnemyStinger : MonoBehaviour
             /* FILL IN PLAYER HEALTH/LIVES LOGIC HERE
              * 
              */ 
+            GameManager.Instance.GameOver();
             zapSound.Play();
         }
     }
