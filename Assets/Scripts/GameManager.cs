@@ -82,6 +82,11 @@ public class GameManager : MonoBehaviour
         ChangeLevel();
     }
 
+    public void CreditsButton()
+    {
+        
+    }
+
     public void StartDialog(string text)
 	{
         dialogBox.SetActive(true);
@@ -140,6 +145,15 @@ public class GameManager : MonoBehaviour
         fishKillCount++;
     }
 
+    public void DecFishCount()
+    {
+        fishCount--;
+    }
+
+    public void IncRoundCount()
+    {
+        roundCount++;
+    }
     public void IncRound()
     {
         roundCount++;
