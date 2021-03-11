@@ -7,10 +7,14 @@ public class Stinger : MonoBehaviour
 
     BoxCollider2D stingerBox;
     public AudioSource zapSound;
+    public GameObject particles;
+    private ParticleSystem ps;
     // Start is called before the first frame update
     void Start()
     {
         stingerBox = gameObject.GetComponent<BoxCollider2D>();
+        ps = particles.GetComponent<ParticleSystem>();
+
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class Stinger : MonoBehaviour
             Destroy(collision.gameObject);
             GameManager.Instance.DecFishCount();
             zapSound.Play();
+            ps.Play();
         }
     }
 }
