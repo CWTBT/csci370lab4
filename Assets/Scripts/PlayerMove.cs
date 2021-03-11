@@ -14,6 +14,9 @@ public class PlayerMove : MonoBehaviour
     public float moveSpeed = 5f;
     private float moveLimiter = 0.7f;
 
+    public AudioSource boing;
+    public AudioSource zap;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +59,16 @@ public class PlayerMove : MonoBehaviour
 
         body.AddForce(body.transform.up * vertical * moveSpeed);
         body.AddTorque(-horizontal);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "Wall")
+        {
+            boing.Play();
+        }
 
     }
 }

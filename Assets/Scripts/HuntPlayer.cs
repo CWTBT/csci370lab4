@@ -17,6 +17,9 @@ public class HuntPlayer : MonoBehaviour
     private CapsuleCollider2D topCollider;
     private PolygonCollider2D stingerCollider;
 
+    public AudioSource boing;
+    public AudioSource zap;
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,10 +54,20 @@ public class HuntPlayer : MonoBehaviour
             if (collision.GetComponent<Collider>().GetType() == typeof(CapsuleCollider2D))
             {
                 // do stuff only for the top of jellyfish
+                if (collision.gameObject.tag == "Wall")
+                {
+                    boing.Play();
+                }
+
             }
             else if (collision.GetComponent<Collider>().GetType() == typeof(PolygonCollider2D))
             {
                 // do stuff only for the bottom of jellyfish
+                if (collision.gameObject.tag == "Jellyfish")
+                {
+                    zap.Play();
+                    Destroy(collision.gameObject);
+                }
             }
         }
     }

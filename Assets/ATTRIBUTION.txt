@@ -5,3 +5,8 @@ Background Elements: https://opengameart.org/content/underwater-fantasy
 Menu Background: https://opengameart.org/content/ocean-background
 Font: "Seaweed Script" from https://www.1001fonts.com/users/fontdiner/
 Buttons: https://opengameart.org/content/ui-pack
+Josh's Jellyfish Boing: https://opengameart.org/content/cute-cartoon-jump-sound-effect
+        Boing Raw Copyright 2005 cfork <http://freesound.org/people/cfork/>
+        Boing Jump Copyright 2012 Iwan Gabovitch <http://qubodup.net>
+Electric: https://www.partnersinrhyme.com/soundfx/electric_sounds/electric_e-arcing_wav.shtml
+Music: https://opengameart.org/content/beach-01
