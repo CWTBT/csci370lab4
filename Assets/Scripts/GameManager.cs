@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
  
     private Coroutine dialogCo;
 
+    private int fishCount;
+    private int roundCount;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+  
 
     }
 
@@ -119,4 +123,18 @@ public class GameManager : MonoBehaviour
         if (lerp) {StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), 2));}
 
     }
+
+
+    public void incFishCount()
+    {
+        fishCount++;
+    }
+
+    public void incRoundCount()
+    {
+        roundCount++;
+    }
+
+
+
 }
