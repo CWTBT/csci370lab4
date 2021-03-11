@@ -130,6 +130,11 @@ public class GameManager : MonoBehaviour
         fishCount++;
     }
 
+    public void DecFishCount()
+    {
+        fishCount--;
+    }
+
     public void IncRoundCount()
     {
         roundCount++;

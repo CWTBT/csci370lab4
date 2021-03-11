@@ -6,6 +6,7 @@ public class Stinger : MonoBehaviour
 {
 
     BoxCollider2D stingerBox;
+    public AudioSource zapSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,11 @@ public class Stinger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision is CapsuleCollider2D && collision.IsTouching(stingerBox)) Debug.Log("nice"); 
+        if (collision is CapsuleCollider2D && collision.IsTouching(stingerBox))
+        {
+            Destroy(collision.gameObject);
+            GameManager.Instance.DecFishCount();
+            zapSound.Play();
+        }
     }
 }
