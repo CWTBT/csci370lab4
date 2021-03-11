@@ -14666,6 +14666,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5660775033541659335, guid: ec5261bc9c20e43a4bde8253b7cdd9ae, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5660775033541659353, guid: ec5261bc9c20e43a4bde8253b7cdd9ae, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -14722,6 +14726,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 363362251}
+    - target: {fileID: 5660775033541659355, guid: ec5261bc9c20e43a4bde8253b7cdd9ae, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5660775033541659355, guid: ec5261bc9c20e43a4bde8253b7cdd9ae, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5660775033541659357, guid: ec5261bc9c20e43a4bde8253b7cdd9ae, type: 3}
       propertyPath: m_Name
       value: RedFish

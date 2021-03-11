@@ -46,28 +46,26 @@ public class HuntPlayer : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collider2D collision)
     {
+
+     //https://answers.unity.com/questions/188775/having-more-than-one-collider-in-a-gameobject.html
+        if (collision.GetComponent<Collider>().GetType() == typeof(CapsuleCollider2D))
         {
-
-            //https://answers.unity.com/questions/188775/having-more-than-one-collider-in-a-gameobject.html
-            if (collision.GetComponent<Collider>().GetType() == typeof(CapsuleCollider2D))
+            // do stuff only for the top of jellyfish
+            if (collision.gameObject.tag == "Wall")
             {
-                // do stuff only for the top of jellyfish
-                if (collision.gameObject.tag == "Wall")
-                {
-                    boing.Play();
-                }
-
+                boing.Play();
             }
-            else if (collision.GetComponent<Collider>().GetType() == typeof(PolygonCollider2D))
+
+        }
+        else if (collision.GetComponent<Collider>().GetType() == typeof(PolygonCollider2D))
+        {
+            // do stuff only for the bottom of jellyfish
+            if (collision.gameObject.tag == "Jellyfish")
             {
-                // do stuff only for the bottom of jellyfish
-                if (collision.gameObject.tag == "Jellyfish")
-                {
-                    zap.Play();
-                    Destroy(collision.gameObject);
-                }
+                zap.Play();
+                Destroy(collision.gameObject);
             }
         }
     }
