@@ -22,9 +22,15 @@ public class SpawnFish : MonoBehaviour
         
     }
 
-    public void SpawnJelly(int fishCount)
+    public void nextRound()
     {
+        int roundCount = 1; //get round count from Game Manager?
+        int fishCount = 3 * roundCount;
+        StartCoroutine(SpawnJelly(fishCount));
+    }
 
+    IEnumerator SpawnJelly(int fishCount)
+    {
         for (int i=0; i < fishCount; i++)
         {
             GameObject fish = Instantiate(jellyfish);
@@ -36,8 +42,8 @@ public class SpawnFish : MonoBehaviour
             pos.y = Mathf.Cos(a) * dist;
 
             fish.transform.position = pos;
-        }
 
-     
+            yield return new WaitForSeconds(.1f);
+        }
     }
 }
