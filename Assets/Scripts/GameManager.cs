@@ -74,6 +74,11 @@ public class GameManager : MonoBehaviour
         ChangeLevel();
     }
 
+    public void CreditsButton()
+    {
+        
+    }
+
     public void StartDialog(string text)
 	{
         dialogBox.SetActive(true);
