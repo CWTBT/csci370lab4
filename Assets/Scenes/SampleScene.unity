@@ -13952,7 +13952,9 @@ MonoBehaviour:
   events: {fileID: 0}
   menuText: {fileID: 0}
   creditsText: {fileID: 0}
+  healthText: {fileID: 0}
   jellyfish: {fileID: 5660775033541659357, guid: ec5261bc9c20e43a4bde8253b7cdd9ae, type: 3}
+  distance: 0
 --- !u!4 &1041218042
 Transform:
   m_ObjectHideFlags: 0

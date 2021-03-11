@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI menuText;
     public TextMeshProUGUI creditsText;
+    public TextMeshProUGUI healthText;
+    private int health = 3;
  
     private Coroutine dialogCo;
 
@@ -51,12 +53,13 @@ public class GameManager : MonoBehaviour
     {
 
 
-        /*[if ((fishCount <= roundCount) && roundStart){
+        /*if ((fishCount <= roundCount) && roundStart){
             roundStart = false;
             NextRound();
             Debug.Log(roundStart);
         }*/
 
+        if (health <= 0) GameOver();
     }
 
 
@@ -85,6 +88,7 @@ public class GameManager : MonoBehaviour
             startButton.SetActive(false);
             creditsButton.SetActive(false);
             menuText.text = "";
+            healthText.text = "Health: " + health;
             StartCoroutine(LoadYourAsyncScene(true, "SampleScene"));
             currentLevel++;
             roundStart = true;
@@ -96,6 +100,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game over!");
         StartCoroutine(LoadYourAsyncScene(false, "MainMenu"));
         menuText.text = title;
+        healthText.text = "";
+        health = 3;
         startButton.SetActive(true);
         creditsButton.SetActive(true);
     }
@@ -199,6 +205,13 @@ public class GameManager : MonoBehaviour
     public string ReturnFishKillCount()
     {
         return fishKillCount.ToString();
+    }
+
+    public void DecHealth()
+    {
+        health--;
+        healthText.text = "Health: " + health;
+        Debug.Log("Health: " + health);
     }
 
 
