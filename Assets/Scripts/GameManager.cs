@@ -228,7 +228,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnJelly(int fishCount)
     {
-        for (i=i; i < fishCount; i++)
+        for (i=0; i < fishCount; i++)
         {
             Debug.Log("spawning jelly");
 
