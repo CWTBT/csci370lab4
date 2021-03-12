@@ -14,11 +14,11 @@ public class HuntPlayer : MonoBehaviour
     public float rotationSpeed;
 
     private Rigidbody2D rb;
-    private CapsuleCollider2D topCollider;
-    private PolygonCollider2D stingerCollider;
 
     public AudioSource boing;
     public AudioSource zap;
+
+    private bool huntMode;
 
 
     // Start is called before the first frame update
@@ -26,8 +26,7 @@ public class HuntPlayer : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
-        topCollider = GetComponent<CapsuleCollider2D>();
-        stingerCollider = GetComponent<PolygonCollider2D>();
+        huntMode = false;
 
     }
 
@@ -35,38 +34,33 @@ public class HuntPlayer : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 direction = (Vector2)target.position - rb.position;
-
+        float distance = direction.magnitude;
+        HuntModeCheck(distance);
         direction.Normalize();
 
-        float rotateValue = Vector3.Cross(direction, transform.up).z;
+        float rotateValue;
+        Vector3 orientation;
+        
+
+        if (huntMode) orientation = -transform.up;
+        else orientation = transform.up;
+        
+        rotateValue = Vector3.Cross(direction, orientation).z;
 
         rb.angularVelocity = -rotateValue * rotationSpeed;
 
-        rb.velocity = transform.up * speed;
+        rb.velocity = direction * speed;
     }
 
-
-    private void OnCollisionEnter2D(Collider2D collision)
+    void HuntModeCheck(float distance)
     {
-
-     //https://answers.unity.com/questions/188775/having-more-than-one-collider-in-a-gameobject.html
-        if (collision.GetComponent<Collider>().GetType() == typeof(CapsuleCollider2D))
+        if (huntMode && distance > 4)
         {
-            // do stuff only for the top of jellyfish
-            if (collision.gameObject.tag == "Wall")
-            {
-                boing.Play();
-            }
-
+            huntMode = false;
         }
-        else if (collision.GetComponent<Collider>().GetType() == typeof(PolygonCollider2D))
+        else if (distance <= 4)
         {
-            // do stuff only for the bottom of jellyfish
-            if (collision.gameObject.tag == "Jellyfish")
-            {
-                zap.Play();
-                Destroy(collision.gameObject);
-            }
+            huntMode = true;
         }
     }
 }
