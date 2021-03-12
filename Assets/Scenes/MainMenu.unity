@@ -351,10 +351,11 @@ RectTransform:
   - {fileID: 1987845662}
   - {fileID: 789969615}
   - {fileID: 119200808}
-  - {fileID: 2126646328}
-  - {fileID: 1830654069}
   - {fileID: 790146148}
   - {fileID: 1702455722}
+  - {fileID: 830030394}
+  - {fileID: 1830654069}
+  - {fileID: 2126646328}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -398,6 +399,7 @@ MonoBehaviour:
   creditsButton: {fileID: 119200807}
   backButton: {fileID: 2126646327}
   backgroundImage: {fileID: 723151240}
+  creditsBackground: {fileID: 830030393}
   canvas: {fileID: 495009906}
   events: {fileID: 1614533146}
   menuText: {fileID: 1987845663}
@@ -657,7 +659,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495009910}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -760,6 +762,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790146147}
+  m_CullTransparentMesh: 1
+--- !u!1 &830030393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 830030394}
+  - component: {fileID: 830030396}
+  - component: {fileID: 830030395}
+  m_Layer: 5
+  m_Name: CreditsBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &830030394
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830030393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 495009910}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.821, y: 11.284}
+  m_SizeDelta: {x: 1030.9329, y: 720.6219}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &830030395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830030393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6313726}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &830030396
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830030393}
   m_CullTransparentMesh: 1
 --- !u!1 &1256167051
 GameObject:
@@ -1478,7 +1555,7 @@ RectTransform:
   m_Children:
   - {fileID: 1320180385}
   m_Father: {fileID: 495009910}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1553,12 +1630,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 495009910}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.2504, y: -54.5106}
-  m_SizeDelta: {x: 625.2205, y: 226.6593}
+  m_AnchoredPosition: {x: 1.2504005, y: -87.34547}
+  m_SizeDelta: {x: 732.4189, y: 425.2991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1830654070
 MonoBehaviour:
@@ -1580,7 +1657,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Put credits here
+  m_text: "Jellyfish: https://opengameart.org/content/primary-jellies\r\nJellyfish
+    Sounds: https://opengameart.org/content/primary-jellies\r\nTileset: https://opengameart.org/content/alien-planet-platformer-tileset\r\nBackground
+    Elements: https://opengameart.org/content/underwater-fantasy\r\nMenu Background:
+    https://opengameart.org/content/ocean-background\r\nFont: \"Seaweed Script\"
+    from https://www.1001fonts.com/users/fontdiner/\r\nButtons: https://opengameart.org/content/ui-pack\r\nJosh's
+    Jellyfish Boing: https://opengameart.org/content/cute-cartoon-jump-sound-effect\r\n       
+    Boing Raw Copyright 2005 cfork <http://freesound.org/people/cfork/>\r\n       
+    Boing Jump Copyright 2012 Iwan Gabovitch <http://qubodup.net>\r\nElectric: https://www.partnersinrhyme.com/soundfx/electric_sounds/electric_e-arcing_wav.shtml\r\nMusic:
+    https://opengameart.org/content/beach-01"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1fa54ac843d41bc43a60fd2cedd6b8fb, type: 2}
   m_sharedMaterial: {fileID: 647854893498712607, guid: 1fa54ac843d41bc43a60fd2cedd6b8fb, type: 2}
@@ -1590,7 +1675,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4284821760
-  m_fontColor: {r: 0, g: 0.1932415, b: 0.3962264, a: 1}
+  m_fontColor: {r: 0.76100624, g: 0.8769537, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1607,14 +1692,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1823,11 +1908,11 @@ RectTransform:
   m_Children:
   - {fileID: 1386881058}
   m_Father: {fileID: 495009910}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -465, y: -219}
+  m_AnchoredPosition: {x: 236.05, y: -250}
   m_SizeDelta: {x: 262.8175, y: 49.2783}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126646329

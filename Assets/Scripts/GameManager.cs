@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject creditsButton;
     public GameObject backButton;
     public GameObject backgroundImage;
+    public GameObject creditsBackground;
 
     public GameObject canvas;
     public GameObject events;
@@ -124,6 +125,7 @@ public class GameManager : MonoBehaviour
         creditsButton.SetActive(false);
         creditsText.gameObject.SetActive(true);
         backButton.SetActive(true);
+        creditsBackground.SetActive(true);
     }
 
     public void BackButton()
@@ -133,6 +135,7 @@ public class GameManager : MonoBehaviour
         creditsButton.SetActive(true);
         backButton.SetActive(false);
         creditsText.gameObject.SetActive(false);
+        creditsBackground.SetActive(false);
     }
 
     public void StartDialog(string text)
