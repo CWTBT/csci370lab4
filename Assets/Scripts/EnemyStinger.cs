@@ -22,11 +22,11 @@ public class EnemyStinger : MonoBehaviour
     {
         if (collision is CapsuleCollider2D && collision.IsTouching(stingerPoly))
         {
-            /* FILL IN PLAYER HEALTH/LIVES LOGIC HERE
-             * 
-             */ 
-            GameManager.Instance.DecHealth();
-            zapSound.Play();
+            if (collision.gameObject.tag == "Player") 
+            {
+                GameManager.Instance.DecHealth();
+                zapSound.Play();
+            }
         }
     }
 }
