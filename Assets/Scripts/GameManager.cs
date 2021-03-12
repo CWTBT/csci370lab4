@@ -104,6 +104,10 @@ public class GameManager : MonoBehaviour
         healthText.text = "";
         health = 100;
         currentLevel = 0;
+        roundStart = false;
+        fishCount = 0;
+        fishKillCount = 0;
+        roundCount = 0;
         startButton.SetActive(true);
         creditsButton.SetActive(true);
     }
