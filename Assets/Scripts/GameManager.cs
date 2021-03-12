@@ -62,6 +62,11 @@ public class GameManager : MonoBehaviour
         }
 
         if (health <= 0) GameOver();
+
+        if (Input.GetKeyDown("space"))
+        {
+            HideDialog();
+        }
     }
 
 
@@ -94,6 +99,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(LoadYourAsyncScene(true, "SampleScene"));
             currentLevel++;
             roundStart = true;
+            StartDialog(dialogText.GetComponent<TextMeshProUGUI>().text);
         }
     }
 
