@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI menuText;
     public TextMeshProUGUI creditsText;
     public TextMeshProUGUI healthText;
-    private int health = 3;
+    private int health = 1000;
  
     private Coroutine dialogCo;
 
@@ -53,11 +53,11 @@ public class GameManager : MonoBehaviour
     {
 
 
-        /*if ((fishCount <= roundCount) && roundStart){
+        if ((fishCount <= roundCount) && roundStart){
             roundStart = false;
             NextRound();
             Debug.Log(roundStart);
-        }*/
+        }
 
         if (health <= 0) GameOver();
     }
