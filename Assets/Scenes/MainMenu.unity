@@ -663,7 +663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 453, y: 215.18}
+  m_AnchoredPosition: {x: 279.64026, y: 215.18}
   m_SizeDelta: {x: 400.7195, y: 100.1799}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &790146149
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4284821760
-  m_fontColor: {r: 0, g: 0.1932415, b: 0.3962264, a: 1}
+  m_fontColor: {r: 0.7595229, g: 0.85788256, b: 0.9622642, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1113,7 +1113,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Use arrows to move around. The jellyfish you encounter will start turning
-    around as they approach. Use your stinger to sting them. Avoid corners.
+    around as they approach. Use your stinger to sting them. Avoid corners. Press
+    Space to close this dialog.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1fa54ac843d41bc43a60fd2cedd6b8fb, type: 2}
   m_sharedMaterial: {fileID: 647854893498712607, guid: 1fa54ac843d41bc43a60fd2cedd6b8fb, type: 2}
@@ -1123,7 +1124,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4290084191
-  m_fontColor: {r: 0.37254903, g: 0.4901961, b: 0.70980394, a: 1}
+  m_fontColor: {r: 0.8192417, g: 0.879006, b: 0.990566, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1575,7 +1576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9058824, g: 0.95294124, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
