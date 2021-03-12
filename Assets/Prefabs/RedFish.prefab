@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 2
-  rotationSpeed: 200
+  rotationSpeed: 150
   boing: {fileID: 0}
   zap: {fileID: 0}
 --- !u!60 &5660775033541659334
