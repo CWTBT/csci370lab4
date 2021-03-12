@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     private Coroutine dialogCo;
 
     private int fishCount;
+    private int i;
     private int roundCount = 0;
     private int fishKillCount;
     private bool roundStart = false;
@@ -220,13 +221,14 @@ public class GameManager : MonoBehaviour
         roundCount++;
         Debug.Log("Round: " + roundCount);
         fishCount = 3 * roundCount;
+        i = 0;
         StartCoroutine(SpawnJelly(fishCount));
     }
 
 
     IEnumerator SpawnJelly(int fishCount)
     {
-        for (int i = 0; i < fishCount; i++)
+        for (i=i; i < fishCount; i++)
         {
             Debug.Log("spawning jelly");
 
@@ -239,7 +241,7 @@ public class GameManager : MonoBehaviour
 
             fish.transform.position = pos;
 
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(1f);
         }
         roundStart = true;
         Debug.Log("Number of Jellies: " + fishCount);
