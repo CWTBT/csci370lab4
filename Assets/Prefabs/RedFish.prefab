@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5660775033541659335}
   - component: {fileID: 4418347449024614824}
   - component: {fileID: 6567436970970270114}
+  - component: {fileID: 7162024610202962373}
   m_Layer: 0
   m_Name: RedFish
   m_TagString: Jellyfish
@@ -216,6 +217,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zapSound: {fileID: 1018290366094008922}
+--- !u!60 &7162024610202962373
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660775033541659357}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.24, y: 0.24}
+    newSize: {x: 0.24, y: 0.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.0011568666, y: -0.03640163}
+      - {x: -0.11110805, y: -0.037509743}
+      - {x: -0.11113548, y: -0.056429118}
+      - {x: -0.07783961, y: -0.066805124}
+      - {x: -0.09942007, y: -0.08590603}
+      - {x: -0.08564996, y: -0.105540246}
+      - {x: -0.026867718, y: -0.060164444}
+      - {x: -0.010833897, y: -0.111135475}
+      - {x: 0.019452453, y: -0.11383879}
+      - {x: 0.01494357, y: -0.06347394}
+      - {x: 0.07567742, y: -0.106648415}
+      - {x: 0.090323985, y: -0.08717513}
+      - {x: 0.080308706, y: -0.06204021}
+      - {x: 0.10781127, y: -0.061941825}
+      - {x: 0.11180487, y: -0.038556695}
+      - {x: 0.06556777, y: -0.036401693}
 --- !u!1 &8711456796296545459
 GameObject:
   m_ObjectHideFlags: 0

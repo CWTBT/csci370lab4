@@ -403,7 +403,7 @@ MonoBehaviour:
   creditsText: {fileID: 1830654070}
   healthText: {fileID: 790146149}
   jellyfish: {fileID: 5660775033541659357, guid: ec5261bc9c20e43a4bde8253b7cdd9ae, type: 3}
-  distance: 0
+  distance: 2
 --- !u!4 &693253344
 Transform:
   m_ObjectHideFlags: 0
