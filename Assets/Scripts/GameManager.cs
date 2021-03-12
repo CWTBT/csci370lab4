@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI menuText;
     public TextMeshProUGUI creditsText;
     public TextMeshProUGUI healthText;
-    private int health = 1000;
+    private int health = 100;
  
     private Coroutine dialogCo;
 
@@ -102,7 +102,8 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadYourAsyncScene(false, "MainMenu"));
         menuText.text = title;
         healthText.text = "";
-        health = 3;
+        health = 100;
+        currentLevel = 0;
         startButton.SetActive(true);
         creditsButton.SetActive(true);
     }
